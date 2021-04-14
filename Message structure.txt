@@ -1,0 +1,41 @@
+Message identifier:
+
+0 - close connection
+1 - newcomer announcement
+2 - public chat
+3 - send public file
+4 - private chat
+5 - client list
+6 - login
+7 - private file
+8 - sign up
+
+
+
+
+
+
+
+*Message structure when send to server:
+- 0|name
+- 1|name
+- 2|message
+- 3|fileName|data
+- 4|receiver|message
+- 6|username|password
+- 7|receiver|fileName|data
+- 8|username|password
+
+
+
+
+
+*Message structure when server response:
+- Newcomer announcement: 1|Welcome + name
+- Public message: Sender: message
+- Public file: 3|sender|fileName|data
+- Private message: 4|sender|message
+- Client list: 5|client name, client name, ...
+- Login: 6|true, false, exist
+- Private file: 7|sender|fileName|data
+- Sign up: 8|true|false
